@@ -81,6 +81,11 @@ public class HanguSocketClient extends Thread{
 			r = io.execute(obj.get("cmd").getAsString());
 			dataOutStream.writeBoolean(r);
 			break;
+		case "file_exists":
+			System.out.println("file_exists");
+			r = io.fileExists(obj.get("path").getAsString());
+			dataOutStream.writeBoolean(r);
+			break;
 		default:
 			System.out.println("error");
 			break;
